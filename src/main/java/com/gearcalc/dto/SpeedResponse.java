@@ -1,4 +1,4 @@
-package com.gearcalc.entities;
+package com.gearcalc.dto;
 
 
 import lombok.ToString;

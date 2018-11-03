@@ -3,7 +3,7 @@ package com.gearcalc.service;
 import com.gearcalc.entities.Car;
 import com.gearcalc.entities.Gear;
 import com.gearcalc.entities.GearBox;
-import com.gearcalc.entities.SpeedResponse;
+import com.gearcalc.dto.SpeedResponse;
 import com.gearcalc.repositories.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

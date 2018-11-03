@@ -2,7 +2,7 @@ package com.gearcalc.rest;
 
 import com.gearcalc.entities.Car;
 import com.gearcalc.entities.GearBox;
-import com.gearcalc.entities.SpeedResponse;
+import com.gearcalc.dto.SpeedResponse;
 import com.gearcalc.entities.Wheel;
 import com.gearcalc.service.CarService;
 import com.gearcalc.service.GearBoxService;
