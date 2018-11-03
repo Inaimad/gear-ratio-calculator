@@ -1,0 +1,23 @@
+{
+  "carType": "COUPE",
+  "finalDriveRatio": 2.93,
+  "gearBox": {
+    "fifth": 1.00,
+    "first": 4.21,
+    "fourth": 1.24,
+    "id": 1,
+    "second": 2.49,
+    "sixth": 0,
+    "third": 1.66
+  },
+  "id": 1,
+  "model": "328ci",
+  "platform": "E46",
+  "redLine": 6500,
+  "transmissionType": "MANUAL",
+  "wheel": {
+    "diameterInInches": 18,
+    "profile": 35,
+    "width": 255
+  }
+}
