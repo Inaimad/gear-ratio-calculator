@@ -1,8 +1,11 @@
 package com.gearcalc.entities;
 
+import lombok.ToString;
+
 import javax.persistence.*;
 
 @Entity
+@ToString
 public class Car {
 
     @Id

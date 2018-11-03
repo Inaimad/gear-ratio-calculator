@@ -1,9 +1,12 @@
 package com.gearcalc.entities;
 
 
+import lombok.ToString;
+
 import java.util.HashMap;
 import java.util.Map;
 
+@ToString
 public class SpeedResponse {
 
     private Map<String, Double> speedPerGearMap;
