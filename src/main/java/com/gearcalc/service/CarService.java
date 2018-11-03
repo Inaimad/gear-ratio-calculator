@@ -39,6 +39,12 @@ public class CarService {
         return speedResponse;
     }
 
+    public SpeedResponse getVmaxPerCarId(int carId) {
+        Car car = getCarById(carId);
+
+        return getVmaxPerGear(car);
+    }
+
 
     private double getVmaxOnGear(int redLine, double gearRatio, double finalRatio, double wheelCircumference) {
         return (redLine / (gearRatio * finalRatio) * (wheelCircumference / 1000) * 60) / 1000;
