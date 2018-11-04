@@ -41,23 +41,6 @@ public class Car {
     public Car() {
     }
 
-    public Car(GearBox gearBox, double finalDriveRatio, int redLine, Wheel wheel) {
-        this.gearBox = gearBox;
-        this.finalDriveRatio = finalDriveRatio;
-        this.redLine = redLine;
-        this.wheel = wheel;
-    }
-
-    public Car(String model, String platform, String transmissionType, String carType, GearBox gearBox, double finalDriveRatio, int redLine) {
-        this.model = model;
-        this.platform = platform;
-        this.transmissionType = transmissionType;
-        this.carType = carType;
-        this.gearBox = gearBox;
-        this.finalDriveRatio = finalDriveRatio;
-        this.redLine = redLine;
-    }
-
     public int getId() {
         return id;
     }

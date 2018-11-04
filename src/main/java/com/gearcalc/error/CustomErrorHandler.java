@@ -16,7 +16,7 @@ public class CustomErrorHandler {
 
     @ExceptionHandler
     public ResponseEntity<ErrorResponse> catchNumberFormatException(NumberFormatException exception) {
-        log.error("Number Format Exception! Error is: {}", exception.getMessage());
+        log.error("Number Format Exception. Error is: {}", exception.getMessage());
 
         ErrorResponse errorResponse = new ErrorResponse(HttpStatus.BAD_REQUEST.value(),
                 exception.getMessage(), System.currentTimeMillis());
@@ -26,7 +26,7 @@ public class CustomErrorHandler {
 
     @ExceptionHandler
     public ResponseEntity<ErrorResponse> catchConnectionException(ConnectException exception) {
-        log.error("Connection Exception! Check if the DB is running! Error is: {}", exception.getMessage());
+        log.error("Connection Exception. Check if the DB is running! Error is: {}", exception.getMessage());
 
         ErrorResponse errorResponse = new ErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR.value(),
                 exception.getMessage(), System.currentTimeMillis());
@@ -36,7 +36,7 @@ public class CustomErrorHandler {
 
     @ExceptionHandler
     public ResponseEntity<ErrorResponse> catchEntityNotFoundException(EntityNotFoundException exception) {
-        log.error("Entity Not Found Exception! The specified identifier is not present in the DB!" +
+        log.error("Entity Not Found Exception. The specified identifier is not present in the DB!" +
                 " Error is: {}", exception.getMessage());
 
         ErrorResponse errorResponse = new ErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR.value(),

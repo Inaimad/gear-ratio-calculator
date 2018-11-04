@@ -20,9 +20,6 @@ public class WheelServiceTest {
     @Autowired
     private WheelRepository wheelRepository;
 
-    @Autowired
-    private WheelService wheelService;
-
     private Wheel wheel;
 
     @Before
@@ -41,7 +38,7 @@ public class WheelServiceTest {
 
     @Test
     public void getWheelCircumference() {
-        double wheelCircum = wheelService.getWheelCircumference(wheel);
+        double wheelCircum = wheel.getWheelCircumference();
         assertEquals(2008.42, wheelCircum, 0.1);
     }
 

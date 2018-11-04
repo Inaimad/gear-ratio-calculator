@@ -1,4 +1,4 @@
-package com.gearcalc.entities;
+package com.gearcalc.domain;
 
 
 public class Gear {

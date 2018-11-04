@@ -16,6 +16,7 @@ import java.util.Collections;
 @EnableSwagger2
 public class SwaggerConfig {
 
+    // http://localhost:8080/swagger-ui.html#/
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
@@ -28,8 +29,8 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfo("SPEED PER GEAR CALCULATOR API",
-                "A calculator of theoretical speed achieved per gear of a car", "0.0.1", "",
-                new Contact("Damian Igielski", "github/akercocke", "damian.igielski@outlook.com"),
+                "A calculator of theoretical speed achieved per gear of a car", "0.0.2", "",
+                new Contact("Damian Igielski", "github/inaimad", "damian.igielski@outlook.com"),
                 "", "", Collections.emptyList());
     }
 }

@@ -33,6 +33,10 @@ public class Wheel {
         this.diameterInInches = diameterInInches;
     }
 
+    public double getWheelCircumference() {
+        return 2 * Math.PI * (this.getTotalWheelDiameter() / 2);
+    }
+
     public double getWidth() {
         return width;
     }
@@ -57,4 +61,10 @@ public class Wheel {
         this.diameterInInches = diameterInInches;
     }
 
+
+    private double getTotalWheelDiameter() {
+        double totalProfile = this.getWidth() * (this.getProfile() / 100);
+        double diamaterInMm = this.getDiameterInInches() * 2.56;
+        return (totalProfile * 2) + (diamaterInMm * 10);
+    }
 }

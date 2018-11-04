@@ -43,7 +43,7 @@ public class CommonRestController {
     public @ResponseBody Double getWheelCircumference(@RequestBody Wheel wheel) {
 
         log.info("Passed wheel object was: {}", wheel.toString());
-        Double result = wheelService.getWheelCircumference(wheel);
+        Double result = wheel.getWheelCircumference();
         log.info("Wheel circumference was: {}", result.toString());
 
         return result;

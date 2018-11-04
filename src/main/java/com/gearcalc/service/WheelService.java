@@ -19,17 +19,6 @@ public class WheelService {
         this.wheelRepository = wheelRepository;
     }
 
-
-    private double getTotalWheelDiameter(Wheel wheel) {
-        double totalProfile = wheel.getWidth() * (wheel.getProfile() / 100);
-        double diamaterInMm = wheel.getDiameterInInches() * 2.56;
-        return (totalProfile * 2) + (diamaterInMm * 10);
-    }
-
-    public double getWheelCircumference(Wheel wheel) {
-        return 2 * Math.PI * (getTotalWheelDiameter(wheel) / 2);
-    }
-
     public List<Wheel> getAllWheels() {
         return wheelRepository.findAll();
     }

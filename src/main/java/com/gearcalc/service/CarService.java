@@ -1,7 +1,8 @@
 package com.gearcalc.service;
 
+import com.gearcalc.domain.VmaxOnGearParams;
 import com.gearcalc.entities.Car;
-import com.gearcalc.entities.Gear;
+import com.gearcalc.domain.Gear;
 import com.gearcalc.entities.GearBox;
 import com.gearcalc.dto.SpeedResponse;
 import com.gearcalc.repositories.CarRepository;
@@ -14,42 +15,33 @@ import java.util.List;
 @Service
 public class CarService {
 
-    private WheelService wheelService;
     private CarRepository carRepository;
 
     @Autowired
-    public CarService(WheelService wheelService, CarRepository carRepository) {
+    public CarService(CarRepository carRepository) {
         this.carRepository = carRepository;
-        this.wheelService = wheelService;
     }
-
 
     public SpeedResponse getVmaxPerGear(Car car) {
         SpeedResponse speedResponse = new SpeedResponse();
-        double wheelCircumference = wheelService.getWheelCircumference(car.getWheel());
-
+        double wheelCircumference = car.getWheel().getWheelCircumference();
 
         for (Gear gear : setGears(car.getGearBox())) {
             String tempGearNumber = gear.getGearNumber();
             double tempGearRatio = gear.getRatio();
+            VmaxOnGearParams params =
+                    new VmaxOnGearParams(car.getRedLine(), tempGearRatio, car.getFinalDriveRatio(), wheelCircumference);
 
             speedResponse.getSpeedPerGearMap().put(tempGearNumber,
-                    getVmaxOnGear(car.getRedLine(), tempGearRatio, car.getFinalDriveRatio(), wheelCircumference));
+                    params.getVmaxOnGear());
         }
         return speedResponse;
     }
 
     public SpeedResponse getVmaxPerCarId(int carId) {
         Car car = getCarById(carId);
-
         return getVmaxPerGear(car);
     }
-
-
-    private double getVmaxOnGear(int redLine, double gearRatio, double finalRatio, double wheelCircumference) {
-        return (redLine / (gearRatio * finalRatio) * (wheelCircumference / 1000) * 60) / 1000;
-    }
-
 
     private List<Gear> setGears(GearBox gearBox) {
         List<Gear> formattedGears = new ArrayList<>();

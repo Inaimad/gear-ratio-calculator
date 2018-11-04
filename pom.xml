@@ -9,7 +9,7 @@
     <packaging>jar</packaging>
 
     <name>gear-ratio-calculator</name>
-    <description>Demo project for Spring Boot</description>
+    <description>Gear-Ratio-Speed calculator</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
