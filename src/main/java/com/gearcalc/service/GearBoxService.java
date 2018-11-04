@@ -10,15 +10,12 @@ import java.util.List;
 @Service
 public class GearBoxService {
 
-
     private GearboxRepository gearboxRepository;
-
 
     @Autowired
     public GearBoxService(GearboxRepository gearboxRepository) {
         this.gearboxRepository = gearboxRepository;
     }
-
 
     public List<GearBox> getAllGearboxes() {
         return gearboxRepository.findAll();

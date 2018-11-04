@@ -26,7 +26,7 @@ public class CustomErrorHandler {
 
     @ExceptionHandler
     public ResponseEntity<ErrorResponse> catchConnectionException(ConnectException exception) {
-        log.error("Connection Exception. Check if the DB is running! Error is: {}", exception.getMessage());
+        log.error("Connection Exception. Check if the DB is running. Error is: {}", exception.getMessage());
 
         ErrorResponse errorResponse = new ErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR.value(),
                 exception.getMessage(), System.currentTimeMillis());
