@@ -10,9 +10,7 @@ import java.util.List;
 @Service
 public class WheelService {
 
-
     private WheelRepository wheelRepository;
-
 
     @Autowired
     public WheelService(WheelRepository wheelRepository) {

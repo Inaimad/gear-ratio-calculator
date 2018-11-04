@@ -6,9 +6,7 @@ public class Gear {
     private String gearNumber;
     private double ratio;
 
-    public Gear() {
-
-    }
+    public Gear() {}
 
     public Gear(String gearNumber, double ratio) {
         this.gearNumber = gearNumber;

@@ -1,12 +1,11 @@
 package com.gearcalc.service;
 
 import com.gearcalc.GearRatioCalculatorApplication;
+import com.gearcalc.common.CarBuilderFactory;
 import com.gearcalc.entities.Wheel;
-import com.gearcalc.repositories.WheelRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -16,30 +15,17 @@ import static org.junit.Assert.*;
 @SpringBootTest(classes = GearRatioCalculatorApplication.class)
 public class WheelServiceTest {
 
-
-    @Autowired
-    private WheelRepository wheelRepository;
-
     private Wheel wheel;
 
     @Before
     public void init() {
-        wheel = wheelRepository.getOne(1);
+        wheel = CarBuilderFactory.buildWheel();
     }
-
 
     @Test
     public void getTotalWheelDiameter() {
-        assertNotNull(wheel);
-
         double result = getTotalWheelDiameter(wheel);
         assertEquals(639.3, result, 0.1);
-    }
-
-    @Test
-    public void getWheelCircumference() {
-        double wheelCircum = wheel.getWheelCircumference();
-        assertEquals(2008.42, wheelCircum, 0.1);
     }
 
     private double getTotalWheelDiameter(Wheel wheel) {
